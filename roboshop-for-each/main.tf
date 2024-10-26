@@ -18,8 +18,8 @@ resource "aws_instance" "inst" {
   for_each = var.instances
   ami="ami-09c813fb71547fc4f"
   instance_type="t3.small"
-  subnet_id = "subnet-064c2c91998fc5ef9"
-  vpc_security_group_ids=["sg-01024740791e247b2"]
+  subnet_id = "subnet-012206b4eaf203149"
+  vpc_security_group_ids=["sg-06ced1a36abc550ee"]
   associate_public_ip_address = true
   tags={
     Name=each.key
@@ -28,7 +28,7 @@ resource "aws_instance" "inst" {
 
 resource "aws_route53_record" "record" {
   for_each = var.instances
-  zone_id = "Z009602238C0FQXQA8XQS"
+  zone_id = "Z013949914BHV8C6XLNPP"
   name    = "${each.key}-dev.waferhassan.online"
   type    = "A"
   ttl     = 30
