@@ -19,7 +19,7 @@ resource "aws_instance" "inst" {
   count=length(var.instances)
   ami="ami-09c813fb71547fc4f"
   instance_type="t3.small"
-  vpc_security_group_ids=["sg-095c9d6609b27bb7b"]
+  vpc_security_group_ids=["sg-01024740791e247b2"]
   tags={
     Name=var.instances[count.index]
   }
