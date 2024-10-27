@@ -1,3 +1,3 @@
 default:
-    rm -rf .terraform
-    terraform init; terraform apply -auto-approve -var-file=$(env)/provideenv.tfvars
+	rm -rf .terraform
+	terraform $(action) -auto-approve -var-file=$(env)/provideenv.tfvars
