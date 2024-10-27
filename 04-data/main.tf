@@ -21,3 +21,8 @@ data "aws_ami" "example" {
 data "aws_security_group" "sg" {
   name="allow-all"
 }
+
+
+# Here im creating a resource liek aws instance ec2 which requires ami id and security group id...
+# To get them dynamically we are susing "data" source.
+# write 2 "data" separately for each aws_ami and aws_security_group, using them get the id and use it in resource
