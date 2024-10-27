@@ -1,4 +1,4 @@
 default:
 	rm -rf .terraform
-	terraform init
-	terraform $(action) -auto-approve -var-file=$(env)/provideenv.tfvars
+	terraform init -backend-config=env-$(env)/state.tfvars
+	terraform $(action) -auto-approve -var-file=env-$(env)/provideenv.tfvars
