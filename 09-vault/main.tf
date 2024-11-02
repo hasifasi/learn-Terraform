@@ -18,3 +18,8 @@ data "template_file" "example_template" {
     password = data.vault_generic_secret.example_creds.data["password"]
   }
 }
+
+output "rendered_template" {
+  value = data.template_file.example_template.rendered
+  description = "The rendered template with Vault credentials"
+}
