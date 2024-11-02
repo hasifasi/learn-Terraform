@@ -1,7 +1,7 @@
 provider "vault" {
   address = "https://172.31.39.97:8200"
   token=var.vault_token
-  skip_tls_verify = false
+  skip_tls_verify = true
 }
 
 variable "vault_token" {}
